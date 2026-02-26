@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TranslatePipe } from '../../pipes/translate.pipe';
 import { TranslationService } from '../../../core/i18n/translation.service';
 import { AuthService } from '../../../core/auth/auth.service';
+import { ThemeService } from '../../../core/services/theme.service';
 import { APP } from '../../../core/config/app.constants';
 
 interface TabItem {
@@ -32,6 +33,7 @@ interface TabItem {
 export class AppShellComponent {
   protected readonly i18n = inject(TranslationService);
   protected readonly auth = inject(AuthService);
+  protected readonly theme = inject(ThemeService);
   protected readonly appName = APP.name;
 
   protected readonly tabs: TabItem[] = [

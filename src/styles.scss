@@ -4,37 +4,8 @@
 
 @use '@angular/material' as mat;
 
-/* ── Commute Design System Tokens ── */
+/* ── Theme-Independent Tokens ── */
 :root {
-  /* Brand colors */
-  --color-primary: #16a34a;
-  --color-primary-dark: #15803d;
-  --color-primary-light: #bbf7d0;
-  --color-primary-50: #f0fdf4;
-  --color-accent: #0d9488;
-
-  /* Neutrals */
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-
-  /* Surfaces */
-  --color-surface: #ffffff;
-  --color-surface-alt: var(--color-gray-50);
-  --color-surface-elevated: #ffffff;
-
-  /* Text */
-  --color-text: var(--color-gray-900);
-  --color-text-secondary: var(--color-gray-600);
-  --color-text-muted: var(--color-gray-400);
-
   /* Spacing scale (4px base) */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -61,25 +32,117 @@
   --radius-xl: 1rem;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-
   /* Layout */
   --max-width: 600px;
   --nav-height: 56px;
   --bottom-nav-height: 56px;
 }
 
-/* ── Angular Material M3 Theme ── */
+/* ── Light Theme ── */
+:root,
+.light-theme {
+  --color-primary: #16a34a;
+  --color-primary-dark: #15803d;
+  --color-primary-light: #bbf7d0;
+  --color-primary-50: #f0fdf4;
+  --color-accent: #0d9488;
+
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+
+  --color-surface: #ffffff;
+  --color-surface-alt: #f9fafb;
+  --color-surface-elevated: #ffffff;
+
+  --color-text: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #e5e7eb;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+}
+
+/* ── Dark Theme ── */
+.dark-theme {
+  --color-primary: #22c55e;
+  --color-primary-dark: #16a34a;
+  --color-primary-light: #166534;
+  --color-primary-50: #052e16;
+  --color-accent: #2dd4bf;
+
+  --color-gray-50: #111827;
+  --color-gray-100: #1f2937;
+  --color-gray-200: #374151;
+  --color-gray-300: #4b5563;
+  --color-gray-400: #6b7280;
+  --color-gray-500: #9ca3af;
+  --color-gray-600: #d1d5db;
+  --color-gray-700: #e5e7eb;
+  --color-gray-800: #f3f4f6;
+  --color-gray-900: #f9fafb;
+
+  --color-surface: #111827;
+  --color-surface-alt: #1a2332;
+  --color-surface-elevated: #1f2937;
+
+  --color-text: #f9fafb;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #6b7280;
+
+  --color-border: #374151;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+}
+
+/* ── Angular Material M3 Themes ── */
 html {
   height: 100%;
+}
+
+.light-theme {
   @include mat.theme((
     color: (
       primary: mat.$green-palette,
       tertiary: mat.$cyan-palette,
       theme-type: light,
+    ),
+    typography: (
+      brand-family: 'Inter, sans-serif',
+      plain-family: 'Inter, sans-serif',
+    ),
+    density: 0,
+  ));
+}
+
+.dark-theme {
+  @include mat.theme((
+    color: (
+      primary: mat.$green-palette,
+      tertiary: mat.$cyan-palette,
+      theme-type: dark,
     ),
     typography: (
       brand-family: 'Inter, sans-serif',
@@ -104,14 +167,13 @@ body {
   color: var(--color-text);
   font-family: var(--font-sans);
   line-height: 1.6;
-  color-scheme: light;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
   height: 100%;
-  /* Safe area for notched phones */
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
     env(safe-area-inset-left);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img,

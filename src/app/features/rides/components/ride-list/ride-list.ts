@@ -27,7 +27,10 @@ import { type Ride } from '../../models/ride.model';
             </mat-card-content>
           </mat-card>
         } @empty {
-          <p class="empty">{{ 'common.noData' | translate }}</p>
+          <div class="empty">
+            <mat-icon>directions_car</mat-icon>
+            <p>{{ 'common.noData' | translate }}</p>
+          </div>
         }
       </mat-tab>
       <mat-tab [label]="'rides.history' | translate">
@@ -45,7 +48,10 @@ import { type Ride } from '../../models/ride.model';
             </mat-card-content>
           </mat-card>
         } @empty {
-          <p class="empty">{{ 'common.noData' | translate }}</p>
+          <div class="empty">
+            <mat-icon>directions_car</mat-icon>
+            <p>{{ 'common.noData' | translate }}</p>
+          </div>
         }
       </mat-tab>
     </mat-tab-group>
@@ -53,13 +59,36 @@ import { type Ride } from '../../models/ride.model';
   styles: [
     `
       .page-title { font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-4); }
-      .ride-card { margin: var(--space-3) 0; cursor: pointer; }
-      .ride-content { display: flex; flex-direction: column; gap: var(--space-2); }
-      .ride-route { display: flex; align-items: center; gap: var(--space-2); font-weight: 500; }
-      .arrow { font-size: 1rem; width: 1rem; height: 1rem; color: var(--color-text-muted); }
-      .ride-meta { display: flex; align-items: center; gap: var(--space-2); font-size: 0.875rem; color: var(--color-text-secondary); }
+      .ride-card {
+        margin: var(--space-3) 0;
+        cursor: pointer;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+      }
+      .ride-card:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-1px);
+      }
+      .ride-card:active { transform: scale(0.98); }
+      .ride-content { display: flex; flex-direction: column; gap: var(--space-3); }
+      .ride-route {
+        display: flex; align-items: center; gap: var(--space-2);
+        font-weight: 600; font-size: 0.9375rem;
+      }
+      .arrow { font-size: 1rem; width: 1rem; height: 1rem; color: var(--color-primary); }
+      .ride-meta {
+        display: flex; align-items: center; gap: var(--space-2);
+        font-size: 0.875rem; color: var(--color-text-secondary);
+      }
       .ride-meta mat-icon { font-size: 1rem; width: 1rem; height: 1rem; }
-      .empty { text-align: center; padding: var(--space-8); color: var(--color-text-muted); }
+      .empty {
+        display: flex; flex-direction: column; align-items: center;
+        padding: var(--space-10) var(--space-4);
+        color: var(--color-text-muted); text-align: center;
+      }
+      .empty mat-icon {
+        font-size: 3rem; width: 3rem; height: 3rem;
+        margin-bottom: var(--space-3); opacity: 0.6;
+      }
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

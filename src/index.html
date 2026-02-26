@@ -11,6 +11,23 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+  <!-- Theme flash prevention (must run before first paint) -->
+  <script>
+    (function() {
+      try {
+        var theme = localStorage.getItem('commute-theme');
+        var resolved = theme;
+        if (!theme || theme === 'system') {
+          resolved = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.classList.add(resolved + '-theme');
+        document.documentElement.style.colorScheme = resolved;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', resolved === 'dark' ? '#111827' : '#16a34a');
+      } catch(e) {}
+    })();
+  </script>
+
   <!-- Inter Sans Font (non-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

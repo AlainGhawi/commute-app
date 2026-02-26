@@ -7,6 +7,13 @@
     <button mat-icon-button (click)="i18n.toggleLocale()" aria-label="Toggle language">
       <span class="locale-badge">{{ i18n.locale() === 'en' ? 'FR' : 'EN' }}</span>
     </button>
+    <button
+      mat-icon-button
+      (click)="theme.toggleLightDark()"
+      [attr.aria-label]="theme.isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+    >
+      <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
     <button mat-icon-button routerLink="/notifications" aria-label="Notifications">
       <mat-icon>notifications</mat-icon>
     </button>

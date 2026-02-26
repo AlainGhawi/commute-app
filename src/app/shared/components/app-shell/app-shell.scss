@@ -10,9 +10,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-gray-200);
   height: var(--nav-height);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--color-surface) 85%, transparent);
 }
 
 .brand-icon {
@@ -22,8 +24,9 @@
 }
 
 .brand-name {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.125rem;
+  letter-spacing: -0.01em;
 }
 
 .header-spacer {
@@ -44,23 +47,27 @@
   flex: 1;
   overflow-y: auto;
   padding: var(--space-4);
-  padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
+  padding-bottom: calc(var(--bottom-nav-height) + var(--space-4) + env(safe-area-inset-bottom));
   background: var(--color-surface-alt);
 }
 
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: var(--max-width);
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: var(--bottom-nav-height);
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-gray-200);
+  border-top: 1px solid var(--color-border);
   padding-bottom: env(safe-area-inset-bottom);
   z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
 }
 
 .nav-tab {
@@ -75,12 +82,18 @@
   min-width: 64px;
   min-height: 48px;
   border-radius: var(--radius-lg);
-  transition: color 0.15s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  position: relative;
 
   mat-icon {
     font-size: 1.5rem;
     width: 1.5rem;
     height: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    background: color-mix(in srgb, var(--color-primary) 8%, transparent);
   }
 }
 
@@ -91,4 +104,21 @@
 
 .nav-tab.active {
   color: var(--color-primary);
+
+  mat-icon {
+    transform: scale(1.1);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 28px;
+    border-radius: var(--radius-full);
+    background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+    z-index: -1;
+  }
 }

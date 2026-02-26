@@ -41,14 +41,21 @@ import { AuthService } from '../../../../core/auth/auth.service';
   `,
   styles: [
     `
-      .login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--color-surface-alt); }
-      .login-card { width: 100%; max-width: 400px; padding: var(--space-8); }
-      .login-header { display: flex; flex-direction: column; align-items: center; margin-bottom: var(--space-6); }
-      .brand-icon { font-size: 3rem; color: var(--color-primary); margin-bottom: var(--space-2); }
-      .login-title { font-size: 1.5rem; font-weight: 600; }
-      .login-form { display: flex; flex-direction: column; gap: var(--space-2); }
+      .login-container {
+        display: flex; justify-content: center; align-items: center;
+        min-height: 100vh; background: var(--color-surface-alt); padding: var(--space-4);
+      }
+      .login-card { width: 100%; max-width: 400px; padding: var(--space-8); border-radius: var(--radius-xl); }
+      .login-header { display: flex; flex-direction: column; align-items: center; margin-bottom: var(--space-8); }
+      .brand-icon { font-size: 3rem; color: var(--color-primary); margin-bottom: var(--space-3); }
+      .login-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; }
+      .login-form { display: flex; flex-direction: column; gap: var(--space-4); }
       .full-width { width: 100%; }
-      .login-btn { margin-top: var(--space-4); padding: var(--space-3) 0; }
+      .login-btn {
+        margin-top: var(--space-4); padding: var(--space-3) 0;
+        min-height: 48px; font-weight: 600; font-size: 1rem;
+        border-radius: var(--radius-lg);
+      }
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -55,15 +55,20 @@ import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
       .form-content {
         display: flex;
         flex-direction: column;
-        gap: var(--space-1);
+        gap: var(--space-4);
         padding-top: var(--space-4);
       }
       .full-width {
         width: 100%;
       }
       .submit-btn {
-        margin-top: var(--space-2);
+        margin-top: var(--space-4);
         padding: var(--space-3) 0;
+        min-height: 48px;
+        font-weight: 600;
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+        border-radius: var(--radius-lg);
       }
     `,
   ],

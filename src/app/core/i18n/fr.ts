@@ -61,6 +61,12 @@ export const fr: TranslationMap = {
   'login.password': 'Mot de passe',
   'login.submit': 'Se connecter',
 
+  // Theme
+  'theme.light': 'Mode clair',
+  'theme.dark': 'Mode sombre',
+  'theme.system': 'Par défaut du système',
+  'theme.appearance': 'Apparence',
+
   // Common
   'common.save': 'Enregistrer',
   'common.cancel': 'Annuler',

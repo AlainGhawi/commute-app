@@ -19,9 +19,12 @@ import { TranslatePipe } from '../../../../shared/pipes/translate.pipe';
       .page-title { font-size: 1.25rem; font-weight: 600; margin-bottom: var(--space-4); }
       .empty-card mat-card-content {
         display: flex; flex-direction: column; align-items: center;
-        padding: var(--space-8); color: var(--color-text-muted);
+        padding: var(--space-10) var(--space-4); color: var(--color-text-muted); text-align: center;
       }
-      .empty-card mat-icon { font-size: 3rem; width: 3rem; height: 3rem; margin-bottom: var(--space-2); }
+      .empty-card mat-icon {
+        font-size: 3rem; width: 3rem; height: 3rem;
+        margin-bottom: var(--space-3); opacity: 0.6;
+      }
     `,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,

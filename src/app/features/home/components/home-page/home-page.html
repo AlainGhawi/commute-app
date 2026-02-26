@@ -1,0 +1,49 @@
+<div class="home">
+  <h1 class="greeting">{{ 'home.title' | translate }}, {{ auth.currentUser()?.name }}</h1>
+
+  <!-- Quick Actions -->
+  <div class="actions">
+    <a routerLink="/request-ride" class="action-card request">
+      <mat-icon>hail</mat-icon>
+      <span>{{ 'home.requestRide' | translate }}</span>
+    </a>
+    <a routerLink="/offer-ride" class="action-card offer">
+      <mat-icon>directions_car</mat-icon>
+      <span>{{ 'home.offerRide' | translate }}</span>
+    </a>
+  </div>
+
+  <!-- Upcoming Rides -->
+  <h2 class="section-title">{{ 'home.upcomingRides' | translate }}</h2>
+
+  @if (upcomingRides().length > 0) {
+    @for (ride of upcomingRides(); track ride.id) {
+      <mat-card class="ride-card">
+        <mat-card-content>
+          <div class="ride-info">
+            <div class="ride-route">
+              <span class="ride-origin">{{ ride.origin }}</span>
+              <mat-icon class="route-arrow">arrow_forward</mat-icon>
+              <span class="ride-dest">{{ ride.destination }}</span>
+            </div>
+            <div class="ride-meta">
+              <mat-icon>schedule</mat-icon>
+              <span>{{ ride.departureTime }}</span>
+            </div>
+            <div class="ride-meta">
+              <mat-icon>person</mat-icon>
+              <span>{{ ride.driverName }}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    }
+  } @else {
+    <mat-card class="empty-card">
+      <mat-card-content>
+        <mat-icon class="empty-icon">directions_car</mat-icon>
+        <p>{{ 'home.noUpcoming' | translate }}</p>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

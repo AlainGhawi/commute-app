@@ -1,0 +1,94 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-gray-200);
+  height: var(--nav-height);
+}
+
+.brand-icon {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-right: var(--space-2);
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.header-spacer {
+  flex: 1;
+}
+
+.locale-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-4);
+  padding-bottom: calc(var(--bottom-nav-height) + var(--space-4));
+  background: var(--color-surface-alt);
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--bottom-nav-height);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-gray-200);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 10;
+}
+
+.nav-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: var(--space-1) var(--space-3);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  min-width: 64px;
+  min-height: 48px;
+  border-radius: var(--radius-lg);
+  transition: color 0.15s ease;
+
+  mat-icon {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.tab-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+.nav-tab.active {
+  color: var(--color-primary);
+}

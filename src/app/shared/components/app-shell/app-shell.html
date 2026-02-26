@@ -1,0 +1,35 @@
+<div class="shell">
+  <!-- Header -->
+  <mat-toolbar class="header">
+    <span class="material-symbols-outlined brand-icon">commute</span>
+    <span class="brand-name">{{ appName }}</span>
+    <span class="header-spacer"></span>
+    <button mat-icon-button (click)="i18n.toggleLocale()" aria-label="Toggle language">
+      <span class="locale-badge">{{ i18n.locale() === 'en' ? 'FR' : 'EN' }}</span>
+    </button>
+    <button mat-icon-button routerLink="/notifications" aria-label="Notifications">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- Content -->
+  <main class="content">
+    <router-outlet />
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="bottom-nav" aria-label="Main navigation">
+    @for (tab of tabs; track tab.route) {
+      <a
+        class="nav-tab"
+        [routerLink]="tab.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: tab.route === '/' }"
+        [attr.aria-label]="tab.labelKey | translate"
+      >
+        <mat-icon>{{ tab.icon }}</mat-icon>
+        <span class="tab-label">{{ tab.labelKey | translate }}</span>
+      </a>
+    }
+  </nav>
+</div>

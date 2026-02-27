@@ -5,7 +5,8 @@ import { ThemeService } from './core/services/theme.service';
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
-  template: '<router-outlet />',
+  templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
 export class App {
   private readonly theme = inject(ThemeService);

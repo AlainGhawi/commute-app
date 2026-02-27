@@ -14,7 +14,7 @@
   border-bottom: 1px solid var(--color-border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+  background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
 }
 
 .brand-icon {
@@ -27,6 +27,7 @@
   font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: -0.01em;
+  color: var(--color-text);
 }
 
 .header-spacer {
@@ -41,6 +42,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
+  color: var(--color-text);
 }
 
 .content {
@@ -48,7 +50,7 @@
   overflow-y: auto;
   padding: var(--space-4);
   padding-bottom: calc(var(--bottom-nav-height) + var(--space-4) + env(safe-area-inset-bottom));
-  background: var(--color-surface-alt);
+  background: var(--bg-page);
 }
 
 .bottom-nav {
@@ -62,12 +64,12 @@
   justify-content: space-around;
   align-items: center;
   height: var(--bottom-nav-height);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--tab-bar-border);
   padding-bottom: env(safe-area-inset-bottom);
   z-index: 10;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--color-surface) 90%, transparent);
+  background: color-mix(in srgb, var(--tab-bar-bg) 92%, transparent);
 }
 
 .nav-tab {
@@ -77,7 +79,7 @@
   justify-content: center;
   gap: 2px;
   padding: var(--space-1) var(--space-3);
-  color: var(--color-text-muted);
+  color: var(--tab-inactive);
   text-decoration: none;
   min-width: 64px;
   min-height: 48px;

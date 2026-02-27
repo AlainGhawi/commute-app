@@ -1,6 +1,7 @@
 .greeting {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--color-text);
   margin-bottom: var(--space-6);
   letter-spacing: -0.02em;
 }
@@ -18,14 +19,15 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-6) var(--space-4);
-  border-radius: var(--radius-xl);
-  color: white;
+  border-radius: 18px;
+  color: #ffffff;
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
   &::before {
     content: '';
@@ -43,6 +45,7 @@
     width: 2.25rem;
     height: 2.25rem;
     z-index: 1;
+    color: #ffffff;
   }
 
   span {
@@ -51,7 +54,7 @@
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-elevated);
   }
 
   &:active {
@@ -77,10 +80,14 @@
 
 .ride-card {
   margin-bottom: var(--space-3);
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-card);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 
   &:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-elevated);
     transform: translateY(-1px);
   }
 }
@@ -97,6 +104,7 @@
   gap: var(--space-2);
   font-weight: 600;
   font-size: 0.9375rem;
+  color: var(--color-text);
 }
 
 .route-arrow {
@@ -122,6 +130,10 @@
 }
 
 .empty-card {
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+
   mat-card-content {
     display: flex;
     flex-direction: column;

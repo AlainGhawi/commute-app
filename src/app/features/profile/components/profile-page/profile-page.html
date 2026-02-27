@@ -1,0 +1,39 @@
+<h1 class="page-title">{{ 'profile.title' | translate }}</h1>
+
+<mat-card class="profile-card">
+  <div class="profile-header">
+    <div class="avatar-ring">
+      <mat-icon>person</mat-icon>
+    </div>
+    <h2 class="user-name">{{ auth.currentUser()?.name }}</h2>
+    <p class="user-email">{{ auth.currentUser()?.email }}</p>
+  </div>
+</mat-card>
+
+<div class="settings-section">
+  <h3 class="section-label">{{ 'profile.preferences' | translate }}</h3>
+  <mat-card class="info-card">
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon matListItemIcon>location_on</mat-icon>
+        <span matListItemTitle>{{ 'profile.homeZone' | translate }}</span>
+        <span matListItemLine>{{ auth.currentUser()?.homeZone }}</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListItemIcon>badge</mat-icon>
+        <span matListItemTitle>Role</span>
+        <span matListItemLine>{{ auth.currentUser()?.role }}</span>
+      </mat-list-item>
+      <mat-list-item (click)="theme.toggleLightDark()">
+        <mat-icon matListItemIcon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        <span matListItemTitle>{{ 'theme.appearance' | translate }}</span>
+        <span matListItemLine>{{ theme.isDark() ? ('theme.dark' | translate) : ('theme.light' | translate) }}</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
+</div>
+
+<button mat-stroked-button class="logout-btn" (click)="auth.logout()">
+  <mat-icon>logout</mat-icon>
+  {{ 'profile.logout' | translate }}
+</button>

@@ -1,0 +1,30 @@
+<h1 class="page-title">{{ 'matches.title' | translate }}</h1>
+@for (match of matches(); track match.id) {
+  <mat-card class="match-card">
+    <mat-card-content>
+      <div class="match-route">
+        <span>{{ match.origin }}</span>
+        <mat-icon class="arrow">arrow_forward</mat-icon>
+        <span>{{ match.destination }}</span>
+      </div>
+      <div class="match-meta">
+        <span><mat-icon>person</mat-icon> {{ match.driverName }}</span>
+        <span><mat-icon>schedule</mat-icon> {{ match.departureTime }}</span>
+      </div>
+      <div class="match-compat">
+        {{ 'matches.compatibility' | translate }}: {{ (match.compatibility * 100).toFixed(0) }}%
+      </div>
+      <div class="match-actions">
+        <button mat-stroked-button class="decline-btn">{{ 'matches.decline' | translate }}</button>
+        <button mat-flat-button class="accept-btn">{{ 'matches.accept' | translate }}</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+} @empty {
+  <mat-card class="empty-card">
+    <mat-card-content>
+      <mat-icon>handshake</mat-icon>
+      <p>{{ 'matches.noMatches' | translate }}</p>
+    </mat-card-content>
+  </mat-card>
+}

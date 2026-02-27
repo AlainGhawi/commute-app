@@ -1,0 +1,45 @@
+<h1 class="page-title">{{ 'rides.title' | translate }}</h1>
+<mat-tab-group>
+  <mat-tab [label]="'rides.upcoming' | translate">
+    @for (ride of upcoming(); track ride.id) {
+      <mat-card class="ride-card" [routerLink]="['/rides', ride.id]">
+        <mat-card-content class="ride-content">
+          <div class="ride-route">
+            <span>{{ ride.origin }}</span>
+            <mat-icon class="arrow">arrow_forward</mat-icon>
+            <span>{{ ride.destination }}</span>
+          </div>
+          <div class="ride-meta">
+            <mat-icon>schedule</mat-icon> {{ ride.departureTime }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    } @empty {
+      <div class="empty">
+        <mat-icon>directions_car</mat-icon>
+        <p>{{ 'common.noData' | translate }}</p>
+      </div>
+    }
+  </mat-tab>
+  <mat-tab [label]="'rides.history' | translate">
+    @for (ride of history(); track ride.id) {
+      <mat-card class="ride-card" [routerLink]="['/rides', ride.id]">
+        <mat-card-content class="ride-content">
+          <div class="ride-route">
+            <span>{{ ride.origin }}</span>
+            <mat-icon class="arrow">arrow_forward</mat-icon>
+            <span>{{ ride.destination }}</span>
+          </div>
+          <div class="ride-meta">
+            <mat-icon>schedule</mat-icon> {{ ride.departureTime }}
+          </div>
+        </mat-card-content>
+      </mat-card>
+    } @empty {
+      <div class="empty">
+        <mat-icon>directions_car</mat-icon>
+        <p>{{ 'common.noData' | translate }}</p>
+      </div>
+    }
+  </mat-tab>
+</mat-tab-group>

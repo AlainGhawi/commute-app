@@ -9,10 +9,19 @@ export const fr: TranslationMap = {
 
   // Home
   'home.title': 'Bon retour',
+  'home.subtitle': 'Prêt à covoiturer aujourd\'hui?',
+  'home.nextRideAt': 'Vous avez un trajet à',
+  'home.nextRideWith': 'avec',
+  'home.viewDetails': 'Voir les détails du trajet',
   'home.upcomingRides': 'Prochains trajets',
   'home.requestRide': 'Demander un trajet',
   'home.offerRide': 'Offrir un trajet',
   'home.noUpcoming': 'Aucun trajet \u00e0 venir',
+  'home.stats.title': 'Vos statistiques',
+  'home.stats.ridesMonth': 'Trajets ce mois-ci',
+  'home.stats.moneySaved': 'Argent économisé',
+  'home.stats.co2': 'CO₂ évité',
+  'home.stats.days': 'Jours de covoiturage',
 
   // Request Ride
   'requestRide.title': 'Demander un trajet',

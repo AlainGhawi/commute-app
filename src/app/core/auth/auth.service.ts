@@ -15,7 +15,7 @@ export class AuthService {
     const mockUser: AppUser = {
       id: 'u1',
       email: credentials.email,
-      name: 'Alice Martin',
+      name: 'Alain Ghawi',
       role: 'both',
       homeZone: 'Plateau Mont-Royal',
       tenantId: 'tenant-1',

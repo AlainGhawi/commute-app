@@ -17,7 +17,7 @@ import { AuthService } from '../../../../core/auth/auth.service';
 })
 export class LoginPageComponent {
   private readonly auth = inject(AuthService);
-  protected readonly email = signal('alice@acme.com');
+  protected readonly email = signal('ghawialain@gmail.com');
   protected readonly password = signal('password');
 
   protected onSubmit(): void {

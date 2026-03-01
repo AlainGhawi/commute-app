@@ -4,9 +4,9 @@ export const MOCK_RIDES: Ride[] = [
   {
     id: 'r1',
     driverId: 'u2',
-    driverName: 'Bob Tremblay',
+    driverName: 'Walid Chelala',
     riderIds: ['u1'],
-    riderNames: ['Alice Martin'],
+    riderNames: ['Alain Ghawi'],
     origin: 'Plateau Mont-Royal',
     destination: 'Downtown Montreal',
     departureTime: '2026-02-26T08:00:00',
@@ -16,9 +16,9 @@ export const MOCK_RIDES: Ride[] = [
   {
     id: 'r2',
     driverId: 'u1',
-    driverName: 'Alice Martin',
+    driverName: 'Alain Ghawi',
     riderIds: ['u3'],
-    riderNames: ['Clara Dubois'],
+    riderNames: ['Walid Chelala'],
     origin: 'Plateau Mont-Royal',
     destination: 'Downtown Montreal',
     departureTime: '2026-02-25T17:30:00',

@@ -9,10 +9,19 @@ export const en: TranslationMap = {
 
   // Home
   'home.title': 'Welcome back',
+  'home.subtitle': 'Ready to carpool today?',
+  'home.nextRideAt': 'You have a ride at',
+  'home.nextRideWith': 'with',
+  'home.viewDetails': 'View Ride Details',
   'home.upcomingRides': 'Upcoming Rides',
   'home.requestRide': 'Request a Ride',
   'home.offerRide': 'Offer a Ride',
   'home.noUpcoming': 'No upcoming rides',
+  'home.stats.title': 'Your Progress',
+  'home.stats.ridesMonth': 'Rides This Month',
+  'home.stats.moneySaved': 'Money Saved',
+  'home.stats.co2': 'CO₂ Avoided',
+  'home.stats.days': 'Days Carpooled',
 
   // Request Ride
   'requestRide.title': 'Request a Ride',

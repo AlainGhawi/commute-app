@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  max-width: var(--max-width);
   margin: 0 auto;
 }
 
@@ -59,7 +58,6 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: var(--max-width);
   display: flex;
   justify-content: space-around;
   align-items: center;
